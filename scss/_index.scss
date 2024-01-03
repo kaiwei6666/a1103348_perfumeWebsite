@@ -1,0 +1,280 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    //預設字體大小及行高和字型及顏色
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+    //預設字型為SF-Pro
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container{
+    max-width: 1110px;
+}
+
+///z-index
+.z-index-1{
+    z-index: 10;
+}
+.z-index-2{
+    z-index: 90;
+}
+.z-index-3{
+    z-index: 99;
+}
+
+//對部分特定寬度做設定
+//-->讓部分區塊在手機版上能達到滿版
+.w-md-100{
+    @media (max-width:768px) {
+        width: 100% !important;
+    }
+}
+
+//圖片設定
+img{
+    width: 100%;
+    display: block; 
+}
+//-->對部分調整解析度後比例會跑掉的圖片另外進行尺寸設定
+.product__img{
+    @media (min-width:768px) {
+        min-height: 900px;
+    }
+}
+.productlist__img{
+    height: 540px;
+    @media (max-width:768px) {
+        height: 350px;
+    }
+    
+}
+
+//字型
+.ping-fang{
+    font-family:"PingFang TC", -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", Roboto,"Helvetica Neue", Arial, sans-serif;
+}
+
+//手機版字體大小(因bs5在1200px以下會使用vw及修改rem的倍數來調整字體大小，為了使字體大小符合手機版設計稿之大小，故另外在此設定)
+//使用 !important 來蓋過bs5上的樣式
+.fs-md-2{
+    @media (max-width:768px) {
+        font-size: 32px !important;
+    }
+}
+.fs-md-5{
+    @media (max-width:768px) {
+        font-size: 20px !important;
+    }
+}
+.fs-md-3{
+    @media (max-width:768px) {
+        font-size: 28px !important;
+    }
+}
+.fs-md-4{
+    @media (max-width:768px) {
+        font-size: 24px !important;
+    }
+}
+
+//logo
+//-->隱藏文字
+.text-hide{
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+//-->header-logo
+.header-logo{
+    background-image: url(../images/d’Perfume.png);
+    width: 128px;
+    height: 38px;
+}
+//-->footer-logo
+.footer-logo{
+    background-image: url(../images/d’Perfumewhite.png);
+    width: 128px;
+    height: 38px;
+}
+
+//文字-hover樣式
+.header__menu__text{
+    &--hover{
+        &:hover{
+            color: 	#5B5B5B;
+            border-bottom: 2px 	#5B5B5B solid;
+            text-shadow: 0.1em 0.1em 0.2em rgb(71, 68, 68);
+        }
+    }
+}
+//-->查看更多連結
+.readmore__link--hover{
+    &:hover{
+        color: 	#7c5c1d;
+        border-bottom: 1px solid #7c5c1d;
+        text-shadow: 0.1em 0.1em 0.6em 	#ADADAD;
+    }
+}
+.footer__menu__text{
+    color: #fff;
+    &--hover{
+        &:hover{
+            color: 		#E0E0E0;
+            text-shadow: 0.1em 0.1em 0.2em black;
+            border-bottom: 		#E0E0E0 2px solid;
+        }
+    }
+}
+
+//menu之圓標設定
+.menu__label{
+    display: none;
+    @media (max-width:768px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 12px;
+        background-color: #916000;
+        color: #fff;
+        border-radius: 100%;
+        width: 23px;
+        height: 23px;
+        text-align: center;
+        
+    }
+}
+
+//轉場秒數
+.transition{
+    transition: 0.3s;
+}
+
+//banner背景圖片
+.header__banner{
+    background-image: url(../images/index1new.jpg);
+    background-position: left;
+    background-size: cover;
+}
+.footer__banner{
+    background-image: url(../images/index10.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+//按鈕
+.header__btn{
+    //原樣式，因為hover時顏色會變換，故顏色在此設定
+    color: #fff;
+    &--border{
+        border: #fff 2px solid;
+    }
+    &--hover{
+        &:hover{
+            background: #fff;
+            opacity: 0.5;
+            transition: 0.5s;
+            color:rgba($color: 	#ADADAD, $alpha: 1.0);
+        }
+    }
+    &--active{
+        &:active{
+            background: #fff;
+            opacity: 1;
+            transition: 0.5s;
+            color:rgba($color: 	#ADADAD, $alpha: 1.0);
+        }
+    }
+}
+.product__btn{
+    //原樣式，因為hover時顏色會變換，故顏色在此設定
+    color: #000;
+    border: #000 solid 2px;
+    border-radius: 30px;
+    width: 100%;
+    background-color: #fff;
+    &:hover{
+        background: #7B7B7B;
+        border: #7B7B7B solid 2px;
+        color: #fff;
+    }
+    &:active{
+        background: #000;
+        color: #fff;
+    }
+}
+.search__btn{
+    //原樣式，因為hover時顏色會變換，故顏色在此設定
+    background-color: #916000;
+    border: #916000 2px solid;
+    &:hover{
+        background-color: #523a0b;
+        border-color: #523a0b 2px solid;
+    }
+}
+
+/*漢堡選單樣式*/
+/*----已在HTML上對PC隱藏了漢堡選單----*/
+@media (max-width: 768px){
+    .mobile-menu{
+     /*隱藏選單開始*/
+      max-height: 0px;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      transition: max-height 1s;
+      /*絕對定位疊在網頁上*/
+      position: absolute;
+      z-index: 100;
+      /*header 67.6px*/
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: #707070;
+      li{
+            border-bottom: 1px solid #fff;
+            &:hover{
+                background:		#4e4022;
+            }
+            &:active{
+                background: #3a2f18;
+            }
+            a{
+                display: block;
+                padding: 16px 0;
+                transition: all 0.5s;
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .mobile-menu{
+      max-height: 500px
+    }
+}
+
+//遮照樣式
+.bg{
+    height: 540px;
+    opacity: 0.3;
+    @media (max-width:768px) {
+        height: 350px;
+    }
+}
+
+//回到頂部樣式
+.gotop {
+    position: fixed;
+    bottom: 65px;
+    right: 1.5%;
+    z-index: 99;
+    color: 	#7B7B7B;
+    opacity: 0.4;
+    font-size: 40px;
+}

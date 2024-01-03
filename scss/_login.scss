@@ -1,0 +1,31 @@
+.login__input{
+    height: 38px;
+}
+.login__placeholder {
+    &::placeholder{
+        color: #818A91;
+        font-size: 16px;
+    }
+}
+.password--forget{
+    color: #916000;
+    &--hover{
+        &:hover{
+            color: 	#7c5c1d;
+            border-bottom: 1px solid #7c5c1d;
+            text-shadow: 0.1em 0.1em 0.6em 	#ADADAD;
+        }
+    }
+}
+.register__btn{
+    color: #916000;
+    background: #fff;
+    &--hover:hover{
+        color: #fff;
+        background: #916000;
+    }
+}
+
+.login__btn__width{
+    width: 65px;
+}
